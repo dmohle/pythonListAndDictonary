@@ -49,6 +49,19 @@ print("my_dict_of_chars is a " + str((my_dict_of_chars)))
 for k, v in my_dict_of_chars.items():
     print(k + ": " + str(v))
 
+# Sort the dictionary by ASCII value of the chars that are the keys
+# in other words... Sort the dictionary by keys in ascending (alphabetical) order.
+print(sorted(my_dict_of_chars))
+print("")
+for k, v in sorted(my_dict_of_chars.items()):
+    print(k + ": " + str(v))
+print("")
+# Sort the dictionary by value.
+for i in sorted(my_dict_of_chars, key=my_dict_of_chars.get, reverse=True):
+    print(i + ": ",  my_dict_of_chars[i])
+
+
+# TODO: Study Dictionary Comprehension and Lambda function
 
 
 
