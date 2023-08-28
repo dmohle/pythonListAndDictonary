@@ -5,6 +5,10 @@
 # Lists[] and Dicts{}
 #
 # A list of numbers
+from random import randrange
+from collections import Counter
+
+
 my_list_of_nums = [11, 5, 33, 74, 55]
 print(my_list_of_nums)
 print("my_list_of_nums[3] is: " + str(my_list_of_nums[3]))
@@ -19,6 +23,46 @@ print("*********")
 print("")
 for num in my_list_of_nums:
     print(num)
+
+# TODO: Add 1000 random numbers to your list with a while loop
+new_num = 0
+
+# the while loop control variable is named i
+# i is initialized to the value of 1000
+i = 1000
+# the test condition for the while loop is i > 0
+while i > 0:
+    new_num = randrange(10)
+    # add to my_list_of_nums
+    my_list_of_nums.append(new_num)
+  #  print("random number, " + str(new_num) + " added to list!")
+    i = i - 1
+print("\n\n the list is now...")
+print(my_list_of_nums)
+# use a for/in list to display the numbers
+# for i in my_list_of_nums:
+#   print(i)
+
+# use a dictionary to count the number of similar numbers in our list
+# create a dictionary
+the_numbers = {}
+# use a for/in list to create the numbers
+for i in my_list_of_nums:
+    if the_numbers.get(i) is None:
+       # print("Key not found, creating one now...")
+        # Create a new key with an initial value of 1
+        the_numbers[i] = 1
+    else:
+        # print("Key found, incrementing the value of the key now!")
+        # Add 1 to the value of the char found
+        the_numbers[i] = the_numbers[i] + 1
+# output the dictionary
+print("\n\n")
+for k, v in the_numbers.items():
+    print(str(k) + ": " + str(v))
+
+
+
 print("*********")
 print("")
 my_dict_of_chars = {}
@@ -62,6 +106,13 @@ for i in sorted(my_dict_of_chars, key=my_dict_of_chars.get, reverse=True):
 
 
 # TODO: Study Dictionary Comprehension and Lambda function
+
+# Use Counter
+print(" Now try this with a counter...")
+my_counter = Counter(my_str)
+print(my_counter)
+print(my_counter.most_common())
+print(my_counter.values())
 
 
 
